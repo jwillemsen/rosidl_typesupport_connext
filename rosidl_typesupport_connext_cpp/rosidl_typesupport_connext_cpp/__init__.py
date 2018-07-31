@@ -80,7 +80,7 @@ def generate_dds_connext_cpp(
             idl_file
         ]
         if os.name == 'nt':
-            cmd[-5:-5] = ['-dllExportMacroSuffix', pkg_name]
+            cmd[-5:-5] = ['-dllExportMacroSuffix', pkg_name.upper()]
 
         msg_name = os.path.splitext(os.path.basename(idl_file))[0]
         count = 1
@@ -174,7 +174,11 @@ def generate_cpp(args, message_specs, service_specs, known_msg_types):
                 generated_file, generated_filename %
                 convert_camel_case_to_lower_case_underscore(spec.base_type.type))
 
-            data = {'spec': spec, 'subfolder': subfolder}
+            data = {
+                'spec': spec,
+                'subfolder': subfolder,
+                'pkg_upper': spec.base_type.pkg_name.upper(),
+            }
             data.update(functions)
             expand_template(
                 template_file, data, generated_file,
@@ -190,7 +194,10 @@ def generate_cpp(args, message_specs, service_specs, known_msg_types):
                 generated_file, generated_filename %
                 convert_camel_case_to_lower_case_underscore(spec.srv_name))
 
-            data = {'spec': spec}
+            data = {
+                'spec': spec,
+                'pkg_upper': spec.pkg_name.upper(),
+            }
             data.update(functions)
             expand_template(
                 template_file, data, generated_file,

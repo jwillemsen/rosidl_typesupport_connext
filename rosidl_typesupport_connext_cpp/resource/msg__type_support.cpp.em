@@ -318,7 +318,7 @@ namespace rosidl_typesupport_connext_cpp
 {
 
 template<>
-ROSIDL_TYPESUPPORT_CONNEXT_CPP_EXPORT_@(spec.base_type.pkg_name)
+ROSIDL_TYPESUPPORT_CONNEXT_CPP_EXPORT_@(pkg_upper)
 const rosidl_message_type_support_t *
 get_message_type_support_handle<@(spec.base_type.pkg_name)::@(subfolder)::@(spec.base_type.type)>()
 {

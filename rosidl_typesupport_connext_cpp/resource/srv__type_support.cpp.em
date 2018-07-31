@@ -429,7 +429,7 @@ namespace rosidl_typesupport_connext_cpp
 {
 
 template<>
-ROSIDL_TYPESUPPORT_CONNEXT_CPP_EXPORT_@(spec.pkg_name)
+ROSIDL_TYPESUPPORT_CONNEXT_CPP_EXPORT_@(pkg_upper)
 const rosidl_service_type_support_t *
 get_service_type_support_handle<@(spec.pkg_name)::srv::@(spec.srv_name)>()
 {

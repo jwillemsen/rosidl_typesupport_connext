@@ -67,13 +67,13 @@ DDS_TypeCode *
 get_type_code__@(spec.base_type.type)();
 
 bool
-ROSIDL_TYPESUPPORT_CONNEXT_CPP_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_TYPESUPPORT_CONNEXT_CPP_PUBLIC_@(pkg_upper)
 convert_ros_message_to_dds(
   const @(spec.base_type.pkg_name)::@(subfolder)::@(spec.base_type.type) & ros_message,
   @(spec.base_type.pkg_name)::@(subfolder)::dds_::@(spec.base_type.type)_ & dds_message);
 
 bool
-ROSIDL_TYPESUPPORT_CONNEXT_CPP_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_TYPESUPPORT_CONNEXT_CPP_PUBLIC_@(pkg_upper)
 convert_dds_message_to_ros(
   const @(spec.base_type.pkg_name)::@(subfolder)::dds_::@(spec.base_type.type)_ & dds_message,
   @(spec.base_type.pkg_name)::@(subfolder)::@(spec.base_type.type) & ros_message);
@@ -99,7 +99,7 @@ extern "C"
 {
 #endif
 
-ROSIDL_TYPESUPPORT_CONNEXT_CPP_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_TYPESUPPORT_CONNEXT_CPP_PUBLIC_@(pkg_upper)
 const rosidl_message_type_support_t *
   ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_connext_cpp, @(spec.base_type.pkg_name), @(subfolder), @(spec.base_type.type))();
 
